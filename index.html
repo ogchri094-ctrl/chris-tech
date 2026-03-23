@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header" id="header">
+    <h1 class="logo">ChrisTech</h1>
+
+    <nav class="nav" id="nav">
+        <a href="#"><i class="ri-home-5-line"></i> Inicio</a>
+        <a href="#"><i class="ri-smartphone-line"></i> Stock</a>
+        <a href="#"><i class="ri-calendar-line"></i> Agendar</a>
+        <a href="#"><i class="ri-star-line"></i> Referencias</a>
+        <a href="#"><i class="ri-truck-line"></i> Envíos</a>
+        <a href="#"><i class="ri-headphone-line"></i> Accesorios</a>
+        <a href="#"><i class="ri-customer-service-2-line"></i> Contacto</a>
+
+        <a href="#" class="btn-ofertas">
+            <i class="ri-flashlight-fill"></i> Ver ofertas
+        </a>
+    </nav>
+
+    <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+    <section class="seccion1">
+    <div class="iphones">
+        <h2>iPhones al mejor precio</h2>
+        <p>
+            Equipos nuevos y seminuevos con garantía. 
+            Entrega rápida y pago seguro.
+        </p>
+        <a href="#" class="btn-hero">Ver iPhones</a>
+    </div>
+
+    <div class="iphones-img">
+        <img src="Iphones Stock.jpg" alt="iPhones">
+    </div>
+</section>
+
+<section class="compra-segura">
+    <h2>Compra fácil, rápida y segura</h2>
+
+    <div class="slider">
+        <div class="slide-track">
+
+            <div class="item"><i class="ri-shield-check-line"></i> Pago seguro</div>
+            <div class="item"><i class="ri-truck-line"></i> Envíos a todo México</div>
+            <div class="item"><i class="ri-award-line"></i> Garantía incluida</div>
+            <div class="item"><i class="ri-smartphone-line"></i> Equipos originales</div>
+            <div class="item"><i class="ri-flashlight-line"></i> Entrega rápida</div>
+
+            <!-- DUPLICADO PARA LOOP -->
+            <div class="item"><i class="ri-shield-check-line"></i> Pago seguro</div>
+            <div class="item"><i class="ri-truck-line"></i> Envíos a todo México</div>
+            <div class="item"><i class="ri-award-line"></i> Garantía incluida</div>
+            <div class="item"><i class="ri-smartphone-line"></i> Equipos originales</div>
+            <div class="item"><i class="ri-flashlight-line"></i> Entrega rápida</div>
+
+        </div>
+    </div>
+</section>
+
+ <section class="tienda">
+
+    <h2 class="titulo">iPhones Disponibles</h2>
+
+    <!-- FILTROS -->
+    <div class="filtros">
+        <button data-filter="all">Todos</button>
+        <button data-filter="13">iPhone 13</button>
+        <button data-filter="14">iPhone 14</button>
+        <button data-filter="15">iPhone 15</button>
+    </div>
+
+    <!-- PRODUCTOS -->
+    <div class="seccion2">
+
+        <div class="disponibles" data-model="14">
+            <span class="badge">OFERTA</span>
+            <img src="iphone 14 pro.jpg">
+            <h3>iPhone 14 Pro</h3>
+            <p class="precio">$12,999</p>
+            <a href="#" class="btn-card" data-product="iPhone 14 Pro $12,999">Comprar</a>
+        </div>
+
+        <div class="disponibles" data-model="15">
+            <span class="badge">NUEVO</span>
+            <img src="iphone 15 pro max.jpg">
+            <h3>iPhone 15 Pro Max</h3>
+            <p class="precio">$18,999</p>
+            <a href="#" class="btn-card" data-product="iPhone 15 Pro Max $18,999">Comprar</a>
+        </div>
+
+        <div class="disponibles" data-model="13">
+            <span class="badge">HOT</span>
+            <img src="iphone 13.jpg">
+            <h3>iPhone 13</h3>
+            <p class="precio">$9,999</p>
+            <a href="#" class="btn-card" data-product="iPhone 13 $9,999">Comprar</a>
+        </div>
+
+        <div class="disponibles" data-model="15">
+            <span class="badge">OFERTA</span>
+            <img src="ipohone 15 pink.jpg">
+            <h3>iPhone 15</h3>
+            <p class="precio">$14,999</p>
+            <a href="#" class="btn-card" data-product="iPhone 15 $14,999">Comprar</a>
+        </div>
+
+    </div>
+
+
+</section>
+
+
+   <section class="seccion3">
+
+    <div class="cards">
+        <i class="ri-map-pin-line"></i>
+        <h2>Entregas seguras</h2>
+        <p>Entregas personales en CDMX</p>
+    </div>
+
+    <div class="cards">
+        <i class="ri-shield-check-line"></i>
+        <h2>Compra segura</h2>
+        <p>Pagos confiables y protegidos</p>
+    </div>
+
+    <div class="cards">
+        <i class="ri-award-line"></i>
+        <h2>Garantía incluida</h2>
+        <p>Equipos revisados y certificados</p>
+    </div>
+
+    <div class="cards">
+        <i class="ri-truck-line"></i>
+        <h2>Envíos rápidos</h2>
+        <p>Recibe tu iPhone sin demoras</p>
+    </div>
+
+</section>
+
+
+<section class="video-iphone">
+
+    <video autoplay muted loop playsinline>
+        <source src="iphone.mp4" type="video/mp4">
+    </video>
+
+    <!-- OVERLAY -->
+    <div class="overlay"></div>
+
+    <!-- CONTENIDO -->
+    <div class="contenido-video">
+        <h1>El iPhone que buscas, al mejor precio</h1>
+        <p>Calidad, garantía y entrega inmediata</p>
+        <a href="#tienda" class="btn-video">Ver modelos</a>
+    </div>
+
+</section>
+
+  
+  <section class="seccion4">
+
+    <div class="stat">
+        <i class="ri-user-smile-line"></i>
+        <h2><span class="contador" data-target="100">0</span>+</h2>
+        <p>Clientes satisfechos</p>
+    </div>
+
+    <div class="stat">
+        <i class="ri-smartphone-line"></i>
+        <h2><span class="contador" data-target="200">0</span>+</h2>
+        <p>iPhones vendidos</p>
+    </div>
+
+    <div class="stat">
+        <i class="ri-star-smile-line"></i>
+        <h2>4.9★</h2>
+        <p>Valoración promedio</p>
+    </div>
+
+</section>
+
+    
+
+<section class="testimonios">
+
+    <h2>Lo que dicen nuestros clientes</h2>
+
+    <div class="slider-testimonios">
+        <div class="track-testimonios">
+
+            <!-- CARD 1 -->
+            <div class="testimonio">
+                <div class="top">
+                    <img src="cliente1.jpg" alt="">
+                    <div>
+                        <h4>Carlos M.</h4>
+                        <div class="estrellas">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <p>Compré mi iPhone 14 Pro y todo llegó perfecto, súper recomendado.</p>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="testimonio">
+                <div class="top">
+                    <img src="cliente2.jpg" alt="">
+                    <div>
+                        <h4>Andrea G.</h4>
+                        <div class="estrellas">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <p>Muy confiable, atención rápida y el equipo en excelente estado.</p>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="testimonio">
+                <div class="top">
+                    <img src="cliente3.jpg" alt="">
+                    <div>
+                        <h4>Luis R.</h4>
+                        <div class="estrellas">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <p>Entrega en CDMX sin problemas, todo seguro y bien explicado.</p>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="testimonio">
+                <div class="top">
+                    <img src="cliente4.jpg" alt="">
+                    <div>
+                        <h4>Mariana L.</h4>
+                        <div class="estrellas">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <p>Me ayudaron a elegir el modelo ideal, todo salió perfecto.</p>
+            </div>
+
+            <!-- DUPLICADOS PARA LOOP -->
+            <div class="testimonio">
+                <div class="top">
+                    <img src="cliente1.jpg" alt="">
+                    <div>
+                        <h4>Carlos M.</h4>
+                        <div class="estrellas">
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                            <i class="ri-star-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <p>Excelente servicio, volvería a comprar.</p>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<section class="faq">
+
+    <h2>❓ Preguntas Frecuentes</h2>
+
+    <div class="faq-contenedor">
+
+        <div class="faq-item">
+            <h3>¿Los iPhones son originales? <i class="ri-arrow-down-s-line"></i></h3>
+            <p>Sí, todos nuestros equipos son 100% originales y verificados.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>¿Tienen garantía? <i class="ri-arrow-down-s-line"></i></h3>
+            <p>Sí, todos los equipos incluyen garantía por funcionamiento.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>¿Hacen entregas en CDMX? <i class="ri-arrow-down-s-line"></i></h3>
+            <p>Sí, realizamos entregas personales en distintos puntos de la ciudad.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>¿También hacen envíos? <i class="ri-arrow-down-s-line"></i></h3>
+            <p>Sí, enviamos a toda la República con paquetería segura.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>¿Qué métodos de pago aceptan? <i class="ri-arrow-down-s-line"></i></h3>
+            <p>Aceptamos transferencias, efectivo y algunos pagos electrónicos.</p>
+        </div>
+
+        <div class="faq-item">
+            <h3>¿Puedo apartar un equipo? <i class="ri-arrow-down-s-line"></i></h3>
+            <p>Sí, puedes apartarlo con un anticipo.</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section class="contacto">
+
+    <h2>📩 Contáctanos</h2>
+    <p>Déjanos tus datos y te responderemos lo antes posible</p>
+
+    <form class="formulario">
+
+        <input type="text" placeholder="Tu nombre" required>
+        <input type="email" placeholder="Tu correo electrónico" required>
+        <textarea placeholder="Escribe tu mensaje" rows="5" required></textarea>
+
+        <button type="submit">Enviar mensaje</button>
+
+    </form>
+
+</section>
+
+<!-- Recuerda tener Remix Icon en tu head -->
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+<footer class="footer">
+
+    <div class="footer-contenido">
+
+        <div class="footer-col">
+            <h3>ChrisTech</h3>
+            <p>Venta de iPhones nuevos y seminuevos con garantía en CDMX.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Enlaces</h4>
+            <a href=""><i class="ri-home-4-line"></i> Inicio</a>
+            <a href=""><i class="ri-store-line"></i> Stock</a>
+            <a href=""><i class="ri-smartphone-line"></i> Accesorios</a>
+            <a href=""><i class="ri-mail-line"></i> Contacto</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contacto</h4>
+            <p><i class="ri-whatsapp-line"></i> WhatsApp: 55 XXXX XXXX</p>
+            <p><i class="ri-mail-line"></i> christech@gmail.com</p>
+            <p><i class="ri-map-pin-line"></i> CDMX</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Síguenos</h4>
+            <a href=""><i class="ri-facebook-line"></i> Facebook</a>
+            <a href=""><i class="ri-instagram-line"></i> Instagram</a>
+            <a href=""><i class="ri-tiktok-line"></i> TikTok</a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 ChrisTech | Todos los derechos reservados</p>
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

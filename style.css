@@ -1,0 +1,1222 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#fff;
+    color:#111;
+}
+
+/*/* HEADER */
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: transparent;
+    transition: 0.4s;
+    z-index: 1000;
+}
+
+.header.scrolled {
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+/* LOGO */
+.logo {
+    color: #00f7ff;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* NAV */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.nav a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.nav i {
+    font-size: 18px;
+}
+
+/* hover línea */
+.nav a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    background: #00f7ff;
+    bottom: -5px;
+    left: 0;
+    transition: 0.3s;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+.nav a:hover {
+    color: #00f7ff;
+}
+
+/* BOTÓN OFERTAS */
+.btn-ofertas {
+    background: linear-gradient(45deg, #00f7ff, #00c3ff);
+    padding: 10px 18px;
+    border-radius: 25px;
+    color: #0f172a !important;
+    font-weight: bold;
+    position: relative;
+    overflow: hidden;
+    transition: 0.3s;
+
+    animation: pulse 2s infinite;
+}
+
+.btn-ofertas:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #00f7ff, 0 0 40px #00f7ff;
+}
+
+/* glow */
+.btn-ofertas::before {
+    content: "";
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: rgba(0,247,255,0.4);
+    top: -50%;
+    left: -50%;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.btn-ofertas:hover::before {
+    opacity: 1;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0px #00f7ff; }
+    50% { box-shadow: 0 0 20px #00f7ff; }
+    100% { box-shadow: 0 0 0px #00f7ff; }
+}
+
+/* HAMBURGUESA */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: 0.3s;
+}
+
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@media (max-width: 768px) {
+    .nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: blur(15px);
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: 0.5s ease;
+    }
+
+    .nav.active {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .nav a {
+        font-size: 22px;
+        font-weight: bold;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: 0.4s;
+    }
+
+    /* animación en cascada */
+    .nav.active a {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav a:nth-child(1) { transition-delay: 0.1s; }
+    .nav a:nth-child(2) { transition-delay: 0.2s; }
+    .nav a:nth-child(3) { transition-delay: 0.3s; }
+    .nav a:nth-child(4) { transition-delay: 0.4s; }
+    .nav a:nth-child(5) { transition-delay: 0.5s; }
+    .nav a:nth-child(6) { transition-delay: 0.6s; }
+    .nav a:nth-child(7) { transition-delay: 0.7s; }
+    .nav a:nth-child(8) { transition-delay: 0.8s; }
+
+    /* botón ofertas más grande */
+    .btn-ofertas {
+        font-size: 20px;
+        padding: 12px 25px;
+    }
+
+    .menu-toggle {
+        display: flex;
+        z-index: 2000;
+    }
+}
+
+
+
+.seccion1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 120px 10%;
+    min-height: 100vh;
+    gap: 40px;
+
+    background: radial-gradient(circle at top, #1e293b, #0f172a);
+    color: white;
+}
+
+/* TEXTO */
+.iphones {
+    max-width: 500px;
+    animation: fadeLeft 1s ease;
+}
+
+.iphones h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.iphones p {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+/* BOTÓN */
+.btn-hero {
+    display: inline-block;
+    background: linear-gradient(45deg, #00f7ff, #00c3ff);
+    padding: 12px 25px;
+    border-radius: 30px;
+    color: #0f172a;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-hero:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00f7ff;
+}
+
+/* IMAGEN */
+.iphones-img {
+    animation: fadeRight 1s ease;
+}
+
+.iphones-img img {
+    width: 620px;
+    border-radius: 20px;
+    transition: 0.5s;
+
+    animation: float 3s ease-in-out infinite;
+}
+
+.iphones-img img:hover {
+    transform: scale(1.05);
+}
+
+/* ANIMACIONES */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* 📱 MOBILE PRO */
+@media (max-width: 768px) {
+    .seccion1 {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 20px;
+    }
+
+    .iphones h2 {
+        font-size: 32px;
+    }
+
+    .iphones p {
+        font-size: 16px;
+    }
+
+    .iphones-img img {
+        width: 90%;
+        margin-top: 20px;
+    }
+}
+
+.seccion1 {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.8s;
+}
+
+.tienda {
+    padding: 80px 10%;
+    background: #0f172a;
+    color: white;
+}
+
+/* TITULO */
+.titulo {
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* FILTROS */
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.filtros button {
+    padding: 8px 18px;
+    border-radius: 20px;
+    border: none;
+    background: #1e293b;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filtros button:hover {
+    background: #00f7ff;
+    color: #0f172a;
+}
+
+/* GRID */
+.seccion2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* CARD */
+.disponibles {
+    background: rgba(255,255,255,0.03);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.05);
+
+    transition: 0.4s;
+    position: relative;
+}
+
+.disponibles:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,247,255,0.3);
+}
+
+/* BADGE */
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #00f7ff;
+    color: #0f172a;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* IMG */
+.disponibles img {
+    width: 100%;
+    max-width: 160px;
+    margin-bottom: 15px;
+}
+
+/* PRECIO */
+.precio {
+    color: #00f7ff;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+/* BOTON */
+.btn-card {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: linear-gradient(45deg, #00f7ff, #00c3ff);
+    color: #0f172a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.compra-segura {
+    padding: 70px 0;
+    background: linear-gradient(to bottom, #020617, #0f172a);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.compra-segura h2 {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+}
+
+/* CONTENEDOR */
+.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* FADE LATERAL (APPLE TOUCH) */
+.slider::before,
+.slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.slider::before {
+    left: 0;
+    background: linear-gradient(to right, #020617, transparent);
+}
+
+.slider::after {
+    right: 0;
+    background: linear-gradient(to left, #020617, transparent);
+}
+
+/* TRACK */
+.slide-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scroll 25s linear infinite;
+}
+
+/* ITEMS */
+.item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 12px 22px;
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    font-size: 14px;
+    white-space: nowrap;
+
+    transition: 0.3s;
+}
+
+/* ICONOS */
+.item i {
+    font-size: 18px;
+    color: #00f7ff;
+}
+
+/* HOVER SUAVE */
+.item:hover {
+    background: rgba(255,255,255,0.08);
+    transform: scale(1.05);
+}
+
+/* ANIMACIÓN SUAVE */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* PAUSA */
+.slider:hover .slide-track {
+    animation-play-state: paused;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .compra-segura h2 {
+        font-size: 20px;
+    }
+
+    .item {
+        font-size: 13px;
+        padding: 10px 18px;
+    }
+}
+
+.seccion3 {
+    padding: 80px 10%;
+    background: linear-gradient(to bottom, #020617, #0f172a);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* TARJETAS */
+.cards {
+    background: rgba(255,255,255,0.03);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.05);
+
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* EFECTO HOVER PRO */
+.cards:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0,247,255,0.25);
+}
+
+/* ICONO */
+.cards i {
+    font-size: 30px;
+    color: #00f7ff;
+    margin-bottom: 15px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+/* ICONO HOVER */
+.cards:hover i {
+    transform: scale(1.2);
+}
+
+/* TITULO */
+.cards h2 {
+    font-size: 18px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+/* TEXTO */
+.cards p {
+    font-size: 14px;
+    opacity: 0.7;
+    line-height: 1.4;
+}
+
+/* EFECTO GLOW SUAVE */
+.cards::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(0,247,255,0.1), transparent);
+    opacity: 0;
+    transition: 0.4s;
+}
+
+.cards:hover::before {
+    opacity: 1;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .seccion3 {
+        padding: 60px 20px;
+    }
+
+    .cards {
+        padding: 25px 15px;
+    }
+
+    .cards h2 {
+        font-size: 16px;
+    }
+
+    .cards p {
+        font-size: 13px;
+    }
+}
+
+.video-iphone {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* VIDEO */
+.video-iphone video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+}
+
+/* OVERLAY OSCURO */
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+    z-index: 1;
+}
+
+/* CONTENIDO */
+.contenido-video {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+/* TITULO */
+.contenido-video h1 {
+    font-size: 40px;
+    max-width: 700px;
+    margin-bottom: 15px;
+}
+
+/* TEXTO */
+.contenido-video p {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 25px;
+}
+
+/* BOTÓN */
+.btn-video {
+    padding: 12px 28px;
+    border-radius: 30px;
+    background: linear-gradient(45deg, #00f7ff, #00c3ff);
+    color: #0f172a;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-video:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #00f7ff;
+}
+
+@media (max-width: 768px) {
+
+    .video-iphone {
+        height: 70vh; /* 👈 clave para que no se vea gigante */
+    }
+
+    .contenido-video h1 {
+        font-size: 24px;
+    }
+
+    .contenido-video p {
+        font-size: 14px;
+    }
+
+}
+
+.contenido-video h1,
+.contenido-video p,
+.btn-video {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.contenido-video p {
+    animation-delay: 0.3s;
+}
+
+.btn-video {
+    animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.seccion4 {
+    padding: 80px 10%;
+    background: linear-gradient(to top, #020617, #0f172a);
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+/* TARJETAS */
+.stat {
+    background: rgba(255,255,255,0.03);
+    border-radius: 20px;
+    padding: 30px 20px;
+
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.05);
+
+    transition: 0.4s;
+}
+
+/* HOVER */
+.stat:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 10px 30px rgba(0,247,255,0.25);
+}
+
+/* ICONOS */
+.stat i {
+    font-size: 28px;
+    color: #00f7ff;
+    margin-bottom: 10px;
+}
+
+/* NUMEROS */
+.stat h2 {
+    font-size: 32px;
+    color: white;
+}
+
+/* TEXTO */
+.stat p {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+
+.testimonios {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, #020617, #0f172a);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.testimonios h2 {
+    font-size: 28px;
+    margin-bottom: 50px;
+}
+
+/* SLIDER */
+.slider-testimonios {
+    overflow: hidden;
+    position: relative;
+}
+
+/* FADE LATERAL */
+.slider-testimonios::before,
+.slider-testimonios::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 2;
+}
+
+.slider-testimonios::before {
+    left: 0;
+    background: linear-gradient(to right, #020617, transparent);
+}
+
+.slider-testimonios::after {
+    right: 0;
+    background: linear-gradient(to left, #020617, transparent);
+}
+
+/* TRACK */
+.track-testimonios {
+    display: flex;
+    gap: 30px;
+    width: max-content;
+    animation: scroll 35s linear infinite;
+}
+
+/* CARD */
+.testimonio {
+    width: 340px;
+    flex-shrink: 0;
+
+    background: rgba(255,255,255,0.04);
+    border-radius: 25px;
+    padding: 25px;
+
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,0.08);
+
+    text-align: left;
+    transition: 0.4s;
+}
+
+.testimonio:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 15px 40px rgba(0,247,255,0.2);
+}
+
+/* HEADER */
+.top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 15px;
+}
+
+/* FOTO */
+.top img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* NOMBRE */
+.top h4 {
+    font-size: 15px;
+}
+
+/* ESTRELLAS */
+.estrellas i {
+    color: gold;
+    font-size: 16px;
+}
+
+/* TEXTO */
+.testimonio p {
+    font-size: 15px;
+    opacity: 0.85;
+    line-height: 1.5;
+}
+
+/* ANIMACIÓN */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* PAUSA */
+.slider-testimonios:hover .track-testimonios {
+    animation-play-state: paused;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+    .testimonio {
+        width: 280px;
+        padding: 20px;
+    }
+
+    .top img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .testimonio p {
+        font-size: 14px;
+    }
+}
+
+
+/* CONTENEDOR */
+.faq {
+    padding: 80px 10%;
+    background: linear-gradient(to top, #020617, #0f172a);
+    color: white;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 50px;
+}
+
+/* FAQ ITEM */
+.faq-item {
+    background: rgba(255,255,255,0.03);
+    border-radius: 20px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(255,255,255,0.05);
+    padding: 20px;
+    cursor: pointer;
+    transition: 0.4s;
+    overflow: hidden;
+
+    /* PRE ANIMACIÓN */
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+/* FAQ ITEM AL ABRIR */
+.faq-item.active p {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.faq-item.active i {
+    transform: rotate(180deg);
+}
+
+/* HOVER */
+.faq-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0,247,255,0.2);
+}
+
+/* PREGUNTA */
+.faq-item h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    margin: 0;
+}
+
+.faq-item i {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* RESPUESTA */
+.faq-item p {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+    margin-top: 10px;
+}
+
+/* ANIMACIÓN APARECER EN SCROLL */
+.faq-item.show {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.7s ease-out;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .faq {
+        padding: 50px 20px;
+    }
+
+    .faq h2 {
+        font-size: 24px;
+    }
+
+    .faq-item h3 {
+        font-size: 15px;
+    }
+
+    .faq-item p {
+        font-size: 14px;
+    }
+}
+
+.contacto {
+    padding: 80px 10%;
+    background: linear-gradient(to top, #0f172a, #020617);
+    color: white;
+    text-align: center;
+}
+
+.contacto h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.contacto p {
+    font-size: 16px;
+    margin-bottom: 40px;
+    opacity: 0.85;
+}
+
+/* FORMULARIO */
+.formulario {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* INPUT / TEXTAREA */
+.formulario input,
+.formulario textarea {
+    padding: 15px 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.03);
+    color: white;
+    font-size: 15px;
+    transition: 0.3s;
+    outline: none;
+    width: 100%;
+}
+
+/* EFECTO FOCUS */
+.formulario input:focus,
+.formulario textarea:focus {
+    border-color: #00f7ff;
+    box-shadow: 0 0 15px rgba(0,247,255,0.3);
+    background: rgba(255,255,255,0.05);
+}
+
+/* BOTÓN */
+.formulario button {
+    background: linear-gradient(45deg, #00f7ff, #00c3ff);
+    color: #0f172a;
+    padding: 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* HOVER BOTÓN */
+.formulario button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00f7ff;
+}
+
+/* ANIMACIÓN SUAVE EN ENTRADA */
+.contacto h2,
+.contacto p,
+.formulario {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.7s ease-out;
+}
+
+.contacto.show h2,
+.contacto.show p,
+.contacto.show .formulario {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .contacto {
+        padding: 50px 20px;
+    }
+
+    .contacto h2 {
+        font-size: 24px;
+    }
+
+    .contacto p {
+        font-size: 15px;
+    }
+
+    .formulario input,
+    .formulario textarea {
+        font-size: 14px;
+        padding: 12px 15px;
+    }
+
+    .formulario button {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
+
+.footer {
+    background: #0f172a;
+    color: white;
+    padding: 60px 10%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.footer h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.footer p,
+.footer a {
+    font-size: 14px;
+    opacity: 0.8;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    color: white;
+}
+
+/* ICONOS */
+.footer a i,
+.footer p i {
+    margin-right: 8px;
+    color: #00f7ff;
+    vertical-align: middle;
+}
+
+/* HOVER SUAVE */
+.footer a:hover {
+    color: #00f7ff;
+    transform: translateX(5px);
+}
+
+/* GRID FOOTER */
+.footer-contenido {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+/* FOOTER BOTTOM */
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 15px;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .footer-contenido {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+
+    .footer h3 {
+        font-size: 20px;
+    }
+
+    .footer h4 {
+        font-size: 16px;
+    }
+
+    .footer p,
+    .footer a {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-contenido {
+        grid-template-columns: 1fr;
+    }
+}
